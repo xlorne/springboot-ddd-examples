@@ -6,9 +6,7 @@ import lombok.Setter;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
-import javax.persistence.Transient;
 import java.util.Date;
-import java.util.List;
 
 @Setter
 @Getter
@@ -24,7 +22,4 @@ public class LeaveOrderEntity {
     private Long createUserId;
     private Long approvalUserId;
     private int state;
-
-    @Transient
-    private List<CommentEntity> comments;
 }

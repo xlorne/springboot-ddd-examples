@@ -9,10 +9,10 @@ import javax.persistence.Table;
 import java.util.Date;
 
 @Entity
-@Table
+@Table(name = "t_leave_comment")
 @Setter
 @Getter
-public class CommentEntity {
+public class LeaveCommentEntity {
 
     @Id
     private Long id;

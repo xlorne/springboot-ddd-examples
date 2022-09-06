@@ -12,4 +12,12 @@ public class LeaveDTO {
         private String content;
         private String approval;
     }
+
+    @Setter
+    @Getter
+    public static class ApprovalRequest{
+        private long leaveId;
+        private String content;
+        private boolean approval;
+    }
 }

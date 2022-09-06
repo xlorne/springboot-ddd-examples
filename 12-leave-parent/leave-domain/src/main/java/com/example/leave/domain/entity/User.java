@@ -11,6 +11,11 @@ public class User {
     private String username;
     private String password;
 
+
+    public User(Long id) {
+        this.id = id;
+    }
+
     public User(String username, String password) {
         this.username = username;
         this.password = password;
@@ -21,6 +26,15 @@ public class User {
         this.id = id;
         this.username = username;
         this.password = password;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if(obj instanceof User){
+            User target = (User) obj;
+            return target.getId().equals(id);
+        }
+        return super.equals(obj);
     }
 
     public void verify() throws ParamVerifyException{

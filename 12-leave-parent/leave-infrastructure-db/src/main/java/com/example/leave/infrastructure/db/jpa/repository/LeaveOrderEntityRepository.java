@@ -7,5 +7,8 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface LeaveOrderEntityRepository extends JpaRepository<LeaveOrderEntity,Long> {
 
-    Page<LeaveOrderEntity> findByCreateUserId(long id, PageRequest pageRequest);
+    Page<LeaveOrderEntity> findByCreateUserId(long userId, PageRequest pageRequest);
+
+
+    Page<LeaveOrderEntity> findByApprovalUserIdAndState(long userId,int state, PageRequest pageRequest);
 }

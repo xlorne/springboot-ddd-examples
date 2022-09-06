@@ -10,6 +10,7 @@ public class Token implements JsonSerializable {
     private String username;
 
     @Getter
+    @Setter
     private long userId;
 
     @Getter

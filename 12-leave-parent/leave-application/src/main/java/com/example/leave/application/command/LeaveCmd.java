@@ -14,4 +14,17 @@ public class LeaveCmd {
 
         private String content;
     }
+
+
+    @Setter
+    @Getter
+    public static class ApprovalCommand{
+
+        private long leaveId;
+        private String content;
+        private boolean approval;
+        private String approvalUsername;
+
+
+    }
 }

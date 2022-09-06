@@ -1,0 +1,280 @@
+{
+	"info": {
+		"_postman_id": "e4f41c57-2823-4a43-ae75-dc8030f52c3c",
+		"name": "模型集成-12",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "2271501"
+	},
+	"item": [
+		{
+			"name": "创建用户",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\":\"xiaoming\",\n    \"password\":\"123456\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8090/open/user/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"open",
+						"user",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "用户列表",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8090/open/user/list?current=1&pageSize=20",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"open",
+						"user",
+						"list"
+					],
+					"query": [
+						{
+							"key": "current",
+							"value": "1"
+						},
+						{
+							"key": "pageSize",
+							"value": "20"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "用户登录",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\":\"xiaoming\",\n    \"password\":\"123456\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8090/open/user/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"open",
+						"user",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "发起请假",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ7XCJleHBpcmVcIjpmYWxzZSxcImV4cGlyZVRpbWVcIjoxNjYyNDQwMTE4OTc3LFwiZXhwaXJlVmFsdWVcIjo5MDAwMDAsXCJyZW1pbmRUaW1lXCI6MTY2MjQzOTgxODk3NyxcInVzZXJJZFwiOjE5ODAwMTg0MDk0NTAxLFwidXNlcm5hbWVcIjpcInhpYW9taW5nXCJ9In0.1kHoWuE7ypAoL8oNJ0zfxhq_NVlj652_DIja4wrM2ww",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"approval\":\"admin\",    \n    \"content\":\"请假一天测试.\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8090/api/leave/createLeave",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"api",
+						"leave",
+						"createLeave"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "我的请假列表",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ7XCJleHBpcmVcIjpmYWxzZSxcImV4cGlyZVRpbWVcIjoxNjYyNDQ1NDk2ODQ4LFwiZXhwaXJlVmFsdWVcIjozNjAwMDAwLFwicmVtaW5kVGltZVwiOjE2NjI0NDQyOTY4NDgsXCJ1c2VySWRcIjoxOTgwMDE4NDA5NDUwMSxcInVzZXJuYW1lXCI6XCJ4aWFvbWluZ1wifSJ9.Vp9yzzQnmQrixJigwnkHp01Q9u8ov8vlteCU5OAJyxI",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8090/api/leave/myLeave?current=1&pageSize=20",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"api",
+						"leave",
+						"myLeave"
+					],
+					"query": [
+						{
+							"key": "current",
+							"value": "1"
+						},
+						{
+							"key": "pageSize",
+							"value": "20"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "请假审批列表",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ7XCJleHBpcmVcIjpmYWxzZSxcImV4cGlyZVRpbWVcIjoxNjYyNDQ0OTczMDAyLFwiZXhwaXJlVmFsdWVcIjozNjAwMDAwLFwicmVtaW5kVGltZVwiOjE2NjI0NDM3NzMwMDIsXCJ1c2VySWRcIjoxOTc5NDU3MzcwNzczNixcInVzZXJuYW1lXCI6XCJhZG1pblwifSJ9.Fveuz_dbs3sPQaM7D_Exxy8hPMBu7g2uliuh2jpsBoo",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8090/api/leave/todoLeave?current=1&pageSize=20",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"api",
+						"leave",
+						"todoLeave"
+					],
+					"query": [
+						{
+							"key": "current",
+							"value": "1"
+						},
+						{
+							"key": "pageSize",
+							"value": "20"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "请假详情",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ7XCJleHBpcmVcIjpmYWxzZSxcImV4cGlyZVRpbWVcIjoxNjYyNDQ0OTczMDAyLFwiZXhwaXJlVmFsdWVcIjozNjAwMDAwLFwicmVtaW5kVGltZVwiOjE2NjI0NDM3NzMwMDIsXCJ1c2VySWRcIjoxOTc5NDU3MzcwNzczNixcInVzZXJuYW1lXCI6XCJhZG1pblwifSJ9.Fveuz_dbs3sPQaM7D_Exxy8hPMBu7g2uliuh2jpsBoo",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8090/api/leave/detail?id=1662439227185",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"api",
+						"leave",
+						"detail"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "1662439227185"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "请假审批",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ7XCJleHBpcmVcIjpmYWxzZSxcImV4cGlyZVRpbWVcIjoxNjYyNDQ0OTczMDAyLFwiZXhwaXJlVmFsdWVcIjozNjAwMDAwLFwicmVtaW5kVGltZVwiOjE2NjI0NDM3NzMwMDIsXCJ1c2VySWRcIjoxOTc5NDU3MzcwNzczNixcInVzZXJuYW1lXCI6XCJhZG1pblwifSJ9.Fveuz_dbs3sPQaM7D_Exxy8hPMBu7g2uliuh2jpsBoo",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"leaveId\":1662439227185,\n    \"approval\":true,\n    \"content\":\"how old are you (^v^).\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8090/api/leave/approval",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"api",
+						"leave",
+						"approval"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

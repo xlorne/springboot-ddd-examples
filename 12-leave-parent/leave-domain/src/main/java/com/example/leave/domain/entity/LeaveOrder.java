@@ -6,6 +6,7 @@ import com.example.leave.domain.event.LeaveApprovalEvent;
 import com.example.leave.domain.event.LeaveCreateEvent;
 import com.example.leave.domain.exception.LeaveApprovalNotMatchException;
 import com.example.leave.domain.exception.ParamVerifyException;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import org.springframework.util.StringUtils;
 
@@ -14,6 +15,7 @@ import java.util.Date;
 import java.util.List;
 
 @Getter
+@AllArgsConstructor
 public class LeaveOrder {
 
     private Long id;
@@ -41,6 +43,15 @@ public class LeaveOrder {
 
         State(int code) {
             this.code = code;
+        }
+
+        public static State parse(int code) {
+            for (State state:values()){
+                if(state.getCode() == code){
+                    return state;
+                }
+            }
+            return null;
         }
 
         public int getCode() {
@@ -83,6 +94,10 @@ public class LeaveOrder {
     public void approval(Comment comment) throws LeaveApprovalNotMatchException, ParamVerifyException {
         if(comment==null){
             throw new ParamVerifyException("comment must not null.");
+        }
+
+        if(!comment.getUser().equals(approvalUser)){
+            throw new ParamVerifyException("approval user must was setting user.");
         }
 
         if(state != State.CREATE){

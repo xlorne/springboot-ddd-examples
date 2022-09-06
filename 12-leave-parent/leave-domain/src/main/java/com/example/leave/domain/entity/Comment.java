@@ -2,12 +2,14 @@ package com.example.leave.domain.entity;
 
 
 import com.example.leave.domain.exception.ParamVerifyException;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import org.springframework.util.StringUtils;
 
 import java.util.Date;
 
 @Getter
+@AllArgsConstructor
 public class Comment {
 
     private String content;
