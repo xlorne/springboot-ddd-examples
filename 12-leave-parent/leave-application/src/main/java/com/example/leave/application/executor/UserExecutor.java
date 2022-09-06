@@ -13,7 +13,7 @@ public class UserExecutor {
 
     private final UserRepository userRepository;
 
-    public long saveUser(UserCommand.CreateCommand command) throws ParamVerifyException {
+    public long createUser(UserCommand.CreateCommand command) throws ParamVerifyException {
         User user = new User(command.getUsername(),command.getPassword());
         user.verify();
 

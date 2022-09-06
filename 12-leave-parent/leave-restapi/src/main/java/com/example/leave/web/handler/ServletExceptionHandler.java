@@ -2,7 +2,6 @@ package com.example.leave.web.handler;
 
 import com.codingapi.springboot.framework.exception.LocaleMessageException;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.HandlerExceptionResolver;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.view.json.MappingJackson2JsonView;
@@ -11,7 +10,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 @Slf4j
-@Component
 public class ServletExceptionHandler implements HandlerExceptionResolver {
     private final static String DEFAULT_ERROR_CODE = "system.err";
 
