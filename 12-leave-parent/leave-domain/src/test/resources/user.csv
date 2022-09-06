@@ -1,0 +1,3 @@
+id,username,password,verify,result
+1,admin,123456,123456,true
+1,admin,123456,12345,false
