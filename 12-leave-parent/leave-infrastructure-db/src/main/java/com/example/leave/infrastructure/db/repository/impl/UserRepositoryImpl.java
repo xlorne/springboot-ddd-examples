@@ -20,4 +20,13 @@ public class UserRepositoryImpl implements UserRepository {
 
         repository.save(entity);
     }
+
+    @Override
+    public User getUserByUsername(String username) {
+        UserEntity entity = repository.getByUsername(username);
+        if(entity==null){
+            return null;
+        }
+        return new User(entity.getId(),entity.getUsername(),entity.getPassword());
+    }
 }

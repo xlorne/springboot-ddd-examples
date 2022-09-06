@@ -35,7 +35,17 @@ public class LeaveOrder {
     }
 
     public enum State{
-        CREATE,APPROVAL,FINISH
+        CREATE(0),APPROVAL(1),FINISH(2);
+
+        private int code;
+
+        State(int code) {
+            this.code = code;
+        }
+
+        public int getCode() {
+            return code;
+        }
     }
 
 

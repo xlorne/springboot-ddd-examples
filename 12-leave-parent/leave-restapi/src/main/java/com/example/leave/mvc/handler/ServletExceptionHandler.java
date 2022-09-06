@@ -1,4 +1,4 @@
-package com.example.leave.web.handler;
+package com.example.leave.mvc.handler;
 
 import com.codingapi.springboot.framework.exception.LocaleMessageException;
 import lombok.extern.slf4j.Slf4j;

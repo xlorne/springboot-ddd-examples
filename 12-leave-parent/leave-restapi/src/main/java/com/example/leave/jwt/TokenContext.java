@@ -29,4 +29,8 @@ public class TokenContext {
     public String currentUserName(){
         return currentToken().getUsername();
     }
+
+    public long currentUserId() {
+        return currentToken().getUserId();
+    }
 }

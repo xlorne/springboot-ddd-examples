@@ -1,4 +1,4 @@
-package com.example.leave.web.interceptor;
+package com.example.leave.mvc.interceptor;
 
 import com.alibaba.fastjson.JSONObject;
 import com.codingapi.springboot.framework.dto.response.Response;
@@ -37,7 +37,7 @@ public class TokenAuthenticationHandlerInterceptor implements HandlerInterceptor
         }
         Token token = jwt.parser(sign);
         if(token.canRestToken()){
-            Token newSign = jwt.create(token.getUsername());
+            Token newSign = jwt.create(token.getUserId(),token.getUsername());
             log.info("reset token ");
             response.setHeader(TOKEN_KEY,newSign.getToken());
         }

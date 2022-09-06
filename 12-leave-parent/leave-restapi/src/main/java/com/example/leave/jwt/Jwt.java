@@ -22,8 +22,8 @@ public class Jwt {
         this.jwtRestTime = jwtRestTime;
     }
 
-    public Token create(String username){
-        Token token = new Token(username,jwtTime,jwtRestTime);
+    public Token create(long userId,String username){
+        Token token = new Token(userId,username,jwtTime,jwtRestTime);
         String jwt = Jwts.builder().setSubject(token.toJson()).signWith(key).compact();
         token.setToken(jwt);
         return token;

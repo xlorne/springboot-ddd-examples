@@ -2,7 +2,7 @@ package com.example.leave;
 
 import com.example.leave.jwt.Jwt;
 import com.example.leave.properties.LeaveProperties;
-import com.example.leave.web.handler.ServletExceptionHandler;
+import com.example.leave.mvc.handler.ServletExceptionHandler;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Bean;

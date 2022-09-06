@@ -1,7 +1,7 @@
-package com.example.leave.web;
+package com.example.leave.mvc;
 
 import com.example.leave.jwt.Jwt;
-import com.example.leave.web.interceptor.TokenAuthenticationHandlerInterceptor;
+import com.example.leave.mvc.interceptor.TokenAuthenticationHandlerInterceptor;
 import lombok.AllArgsConstructor;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;

@@ -10,6 +10,9 @@ public class Token implements JsonSerializable {
     private String username;
 
     @Getter
+    private long userId;
+
+    @Getter
     @Setter
     private long expireTime;
 
@@ -25,7 +28,8 @@ public class Token implements JsonSerializable {
     @Setter
     @Getter
     private String token;
-    public Token(String username, int expireValue, int remindValue){
+    public Token(long userId,String username, int expireValue, int remindValue){
+        this.userId = userId;
         this.username = username;
         this.expireValue = expireValue;
         this.expireTime = System.currentTimeMillis()+expireValue;
