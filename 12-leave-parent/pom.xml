@@ -26,7 +26,7 @@
         <module>leave-restapi</module>
         <module>leave-application</module>
         <module>leave-domain</module>
-        <module>leave-infrastructure</module>
+        <module>leave-infrastructure-db</module>
     </modules>
 
     <dependencies>

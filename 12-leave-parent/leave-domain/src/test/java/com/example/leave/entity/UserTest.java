@@ -1,6 +1,7 @@
 package com.example.leave.entity;
 
-import com.example.leave.exception.ParamVerifyException;
+import com.example.leave.domain.entity.User;
+import com.example.leave.domain.exception.ParamVerifyException;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
