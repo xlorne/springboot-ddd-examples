@@ -1,11 +1,12 @@
 package com.example.leave.domain.entity;
 
+import com.codingapi.springboot.generator.IdGenerate;
 import com.example.leave.domain.exception.ParamVerifyException;
 import lombok.Getter;
 import org.springframework.util.StringUtils;
 
 @Getter
-public class User {
+public class User implements IdGenerate {
 
     private Long id;
     private String username;
@@ -19,7 +20,7 @@ public class User {
     public User(String username, String password) {
         this.username = username;
         this.password = password;
-        this.id = System.nanoTime();
+        this.id = generateLongId();
     }
 
     public User(Long id, String username, String password) {

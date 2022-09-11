@@ -2,6 +2,7 @@ package com.example.leave.domain.entity;
 
 
 import com.codingapi.springboot.framework.event.EventPusher;
+import com.codingapi.springboot.generator.IdGenerate;
 import com.example.leave.domain.event.LeaveApprovalEvent;
 import com.example.leave.domain.event.LeaveCreateEvent;
 import com.example.leave.domain.exception.LeaveApprovalNotMatchException;
@@ -16,7 +17,7 @@ import java.util.List;
 
 @Getter
 @AllArgsConstructor
-public class LeaveOrder {
+public class LeaveOrder implements IdGenerate {
 
     private Long id;
     private String content;
@@ -27,7 +28,7 @@ public class LeaveOrder {
     private List<Comment> comments;
 
     public LeaveOrder(String content,User createUser,User approvalUser) {
-        this.id = System.currentTimeMillis();
+        this.id = generateLongId();
         this.comments = new ArrayList<>();
         this.approvalUser = approvalUser;
         this.createUser = createUser;
