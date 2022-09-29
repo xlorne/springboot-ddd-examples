@@ -50,7 +50,8 @@ HelloWorld [YouTube](https://www.youtube.com/watch?v=d7LnYy8rTYI&t=149s) [哔哩
 
 ### SpringJPA
 
-JPA是ORM框架，可以非常简单的与领域对象相关联。 https://spring.io/projects/spring-data-jpa
+JPA是ORM框架，可以非常简单的与领域对象相关联。 https://spring.io/projects/spring-data-jpa   
+[为什么推荐使用JPA](https://github.com/1991wangliang/jpa-demo)
 
 ### StartUML
 
